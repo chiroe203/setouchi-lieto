@@ -433,6 +433,17 @@
       margin-bottom: 0;
     }
 
+    /* スマホ用改行（PCでは無視） */
+    .br-sp {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .br-sp {
+        display: inline;
+      }
+    }
+
     .highlight {
       background: linear-gradient(transparent 60%, rgba(232, 168, 50, 0.3) 60%);
       padding: 0 4px;
@@ -1036,24 +1047,30 @@
         
         <div class="about-text">
           <p>
-            瀬戸内海にある大三島に<br>
+            瀬戸内海にある大三島に<br class="br-sp">
             <span class="highlight">setouchi LIETO</span> はあります
           </p>
           <p>
-            広島県尾道市と愛媛県今治市を結ぶ、<br>
-            サイクリングロードとしても有名な<span class="highlight">『しまなみ海道』</span>の<br>
+            広島県尾道市と<br class="br-sp">
+            愛媛県今治市を結ぶ、<br>
+            サイクリングロードとしても有名な<br>
+            <span class="highlight">『しまなみ海道』</span>の<br>
             ちょうど中間地点に位置しています
           </p>
           <p>
-            瀬戸内は温暖で<br>
+            瀬戸内は温暖で<br class="br-sp">
             年間を通し降水量が少なく<br>
             柑橘栽培に適した気候です
           </p>
           <p>
-            LIETO（リエット）は「楽しい」「陽気」などの意味があります<br>
-            瀬戸内海の穏やかな潮風と太陽をたくさん浴びた<br>
+            LIETO（リエット）は<br class="br-sp">
+            「楽しい」「陽気」などの<br class="br-sp">
+            意味があります<br>
+            瀬戸内海の穏やかな潮風と<br class="br-sp">
+            太陽をたくさん浴びた<br>
             フレッシュな柑橘と<br>
-            楽しくなるような気持ちも込めてお届けします
+            楽しくなるような気持ちも込めて<br class="br-sp">
+            お届けします
           </p>
         </div>
       </div>
