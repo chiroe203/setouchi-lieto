@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4876N30XET"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4876N30XET');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>setouchi LIETO | 瀬戸内・大三島の柑橘農園</title>
+  <meta name="description" content="愛媛県今治市・大三島から、瀬戸内の太陽と潮風を浴びた柑橘をお届けします。まどんな、はれひめ、媛小春など愛媛県オリジナル品種を栽培しています。">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --olive-dark: #6B7B3D;
+      --olive-medium: #8A9B5C;
+      --olive-light: #C5D4A8;
+      --orange-citrus: #E8A832;
+      --orange-light: #F0C060;
+      --orange-pale: #FFF8E8;
+      --blue-sea: #7A9BC9;
+      --blue-light: #B8D0E8;
+      --cream: #FDFAF5;
+      --text-dark: #4A5530;
+      --text-light: #6B7B5D;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(253, 250, 245, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(232, 132, 60, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .nav.scrolled {
+      box-shadow: 0 4px 20px rgba(139, 107, 76, 0.1);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo-img {
+      height: 50px;
+      width: auto;
+    }
+
+    .nav-logo-placeholder {
+      height: 50px;
+      width: 50px;
+      background: linear-gradient(135deg, var(--olive-medium), var(--olive-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.6rem;
+      text-align: center;
+    }
+
+    .nav-logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      letter-spacing: 0.05em;
+      line-height: 1.2;
+    }
+
+    .nav-logo-text span {
+      display: block;
+      font-size: 1.1rem;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .nav-tab {
+      padding: 0.6rem 1.2rem;
+      background: transparent;
+      border: none;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      cursor: pointer;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-tab:hover {
+      color: var(--orange-citrus);
+      background: var(--orange-pale);
+    }
+
+    .nav-tab.active {
+      color: white;
+      background: var(--orange-citrus);
+    }
+
+    .nav-social {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .nav-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--olive-dark);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .nav-social a:hover {
+      background: var(--text-dark);
+      transform: translateY(-2px);
+    }
+
+    .nav-social svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Mobile menu */
+    .nav-mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      width: 30px;
+      height: 24px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .nav-mobile-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--text-dark);
+      position: absolute;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    .nav-mobile-toggle span:nth-child(1) { top: 0; }
+    .nav-mobile-toggle span:nth-child(2) { top: 11px; }
+    .nav-mobile-toggle span:nth-child(3) { top: 22px; }
+
+    @media (max-width: 768px) {
+      .nav-right {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(253, 250, 245, 0.98);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
+        border-bottom: 1px solid rgba(232, 132, 60, 0.1);
+        display: none;
+      }
+
+      .nav-right.open {
+        display: flex;
+      }
+
+      .nav-tabs {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .nav-tab {
+        text-align: center;
+      }
+
+      .nav-mobile-toggle {
+        display: block;
+      }
+    }
+
+    /* Page containers */
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    #page-home.active {
+      display: block;
+      min-height: 100vh;
+    }
+
+    #page-shop.active {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    #page-news.active {
+      display: block;
+      min-height: 100vh;
+    }
+
+    /* Hero Slider */
+    .hero {
+      height: 50vh;
+      min-height: 350px;
+      position: relative;
+      padding-top: 70px;
+      overflow: hidden;
+    }
+
+    .hero-slider {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .hero-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+    }
+
+    .hero-slide-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-slide-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--blue-light) 0%, var(--cream) 50%, var(--olive-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--text-light);
+      font-family: monospace;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.15);
+      pointer-events: none;
+    }
+
+    .hero-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .hero-nav:hover {
+      background: white;
+    }
+
+    .hero-nav.prev { left: 20px; }
+    .hero-nav.next { right: 20px; }
+
+    .hero-nav svg {
+      width: 24px;
+      height: 24px;
+      color: var(--text-dark);
+    }
+
+    .hero-dots {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .hero-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      border: 2px solid white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hero-dot.active {
+      background: white;
+    }
+
+    /* Section Base */
+    section {
+      padding: 5rem 2rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .section-title-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      text-align: center;
+      color: var(--orange-citrus);
+      margin-bottom: 3rem;
+    }
+
+    /* About Section */
+    .about {
+      background: var(--cream);
+      position: relative;
+    }
+
+    .about::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--orange-citrus), transparent);
+    }
+
+    .about-text {
+      text-align: center;
+      font-size: 1.05rem;
+      line-height: 2.2;
+      color: var(--text-dark);
+    }
+
+    .about-text p {
+      margin-bottom: 2rem;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* レスポンシブ改行制御 */
+    .br-pc {
+      display: inline;
+    }
+
+    @media (max-width: 768px) {
+      .br-pc {
+        display: none;
+      }
+    }
+
+    .highlight {
+      background: linear-gradient(transparent 60%, rgba(232, 168, 50, 0.3) 60%);
+      padding: 0 4px;
+    }
+
+    /* Products Grid */
+    .products-section {
+      background: linear-gradient(180deg, var(--orange-pale) 0%, var(--cream) 100%);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 900px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 400px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 320px;
+      }
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(139, 107, 76, 0.08);
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(139, 107, 76, 0.15);
+    }
+
+    .product-img-wrap {
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-img {
+      transform: scale(1.05);
+    }
+
+    .product-img-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--orange-light), var(--orange-citrus));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.85rem;
+      font-family: monospace;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .product-info {
+      padding: 0.8rem;
+      text-align: center;
+    }
+
+    .product-name {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .product-hint {
+      font-size: 0.7rem;
+      color: var(--text-light);
+      margin-top: 0.2rem;
+    }
+
+    /* Processed Products Section */
+    .processed-section {
+      background: var(--cream);
+    }
+
+    .processed-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      max-width: 350px;
+      margin: 2rem auto 0;
+    }
+
+    @media (max-width: 500px) {
+      .processed-grid {
+        max-width: 280px;
+      }
+    }
+
+    .processed-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(139, 107, 76, 0.08);
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .processed-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(139, 107, 76, 0.15);
+    }
+
+    .processed-img-wrap {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .processed-img-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--olive-medium), var(--olive-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.85rem;
+      font-family: monospace;
+    }
+
+    .processed-info {
+      padding: 0.8rem;
+      text-align: center;
+    }
+
+    .processed-name {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      padding: 2rem;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal {
+      background: white;
+      border-radius: 20px;
+      max-width: 500px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+    }
+
+    .modal-overlay.active .modal {
+      transform: translateY(0);
+    }
+
+    .modal-img-wrap {
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      border-radius: 20px 20px 0 0;
+      position: relative;
+    }
+
+    .modal-slider {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.4s ease;
+    }
+
+    .modal-slide {
+      min-width: 100%;
+      height: 100%;
+    }
+
+    .modal-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-img-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--orange-light), var(--orange-citrus));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+
+    .modal-slider-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .modal-slider-nav:hover {
+      background: white;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .modal-slider-nav.prev { left: 10px; }
+    .modal-slider-nav.next { right: 10px; }
+
+    .modal-slider-nav svg {
+      width: 18px;
+      height: 18px;
+      color: var(--text-dark);
+    }
+
+    .modal-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+
+    .modal-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .modal-dot.active {
+      background: white;
+    }
+
+    .modal-content {
+      padding: 2rem;
+    }
+
+    .modal-title {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: var(--text-dark);
+    }
+
+    .modal-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+
+    .modal-text {
+      font-size: 0.95rem;
+      line-height: 2;
+      color: var(--text-light);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+      background: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .modal-close:hover {
+      transform: scale(1.1);
+    }
+
+    .modal-close svg {
+      width: 20px;
+      height: 20px;
+      color: var(--text-dark);
+    }
+
+    /* Shop Page */
+    #page-shop .page-shop {
+      flex: 1;
+      padding-top: 70px;
+      background: var(--cream);
+    }
+
+    .shop-content {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .shop-description {
+      font-size: 1.05rem;
+      line-height: 2;
+      color: var(--text-dark);
+      margin-bottom: 2.5rem;
+    }
+
+    .shop-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 1.2rem 3rem;
+      background: var(--olive-dark);
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-radius: 50px;
+      box-shadow: 0 10px 40px rgba(107, 123, 61, 0.3);
+      transition: all 0.4s ease;
+      margin-bottom: 3rem;
+    }
+
+    .shop-btn:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 15px 50px rgba(107, 123, 61, 0.4);
+    }
+
+    .shop-btn svg {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .shop-btn:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* News Page */
+    .page-news {
+      padding-top: 70px;
+      background: var(--cream);
+    }
+
+    .news-header {
+      text-align: center;
+      padding: 4rem 2rem 2rem;
+    }
+
+    .news-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 1rem 4rem;
+    }
+
+    .facebook-embed {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(74, 124, 148, 0.15);
+      overflow: hidden;
+      min-height: 600px;
+    }
+
+    .facebook-embed iframe {
+      width: 100%;
+      border: none;
+    }
+
+    .facebook-link {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .facebook-link a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue-sea);
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.8rem 1.5rem;
+      border: 2px solid var(--blue-sea);
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .facebook-link a:hover {
+      background: var(--blue-sea);
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--text-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: white;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.1em;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      background: var(--orange-citrus);
+      transform: translateY(-3px);
+    }
+
+    .footer-social svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      section {
+        padding: 4rem 1.5rem;
+      }
+
+      .hero-nav {
+        width: 40px;
+        height: 40px;
+      }
+
+      .hero-nav.prev { left: 10px; }
+      .hero-nav.next { right: 10px; }
+    }
+
+    /* Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" onclick="switchPage('home'); return false;">
+        <img src="images/logo.png" alt="setouchi LIETO" class="nav-logo-img">
+        <div class="nav-logo-text">
+          setouchi<span>LIETO</span>
+        </div>
+      </a>
+      
+      <button class="nav-mobile-toggle" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div class="nav-right" id="navRight">
+        <div class="nav-tabs">
+          <button class="nav-tab active" data-page="home" onclick="switchPage('home')">ホーム</button>
+          <button class="nav-tab" data-page="shop" onclick="switchPage('shop')">ご購入</button>
+          <button class="nav-tab" data-page="news" onclick="switchPage('news')">お知らせ</button>
+        </div>
+        
+        <div class="nav-social">
+          <a href="https://www.facebook.com/setouchi.LIETO/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/setouchi.lieto/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Page -->
+  <div class="page active" id="page-home">
+    <!-- Hero Slider -->
+    <section class="hero">
+      <div class="hero-slider">
+        <div class="hero-slide active">
+          <img src="images/hero-1.jpg" alt="瀬戸内海の風景" class="hero-slide-img">
+        </div>
+        <div class="hero-slide">
+          <img src="images/hero-2.jpg" alt="柑橘畑" class="hero-slide-img">
+        </div>
+        <div class="hero-slide">
+          <img src="images/hero-3.jpg" alt="収穫風景" class="hero-slide-img">
+        </div>
+      </div>
+      <div class="hero-overlay"></div>
+      
+      <button class="hero-nav prev" onclick="changeSlide(-1)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+      <button class="hero-nav next" onclick="changeSlide(1)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
+      
+      <div class="hero-dots">
+        <div class="hero-dot active" onclick="goToSlide(0)"></div>
+        <div class="hero-dot" onclick="goToSlide(1)"></div>
+        <div class="hero-dot" onclick="goToSlide(2)"></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about fade-in">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <p class="section-title-en">私たちについて</p>
+        
+        <div class="about-text">
+          <p>
+            瀬戸内海にある大三島に<br class="br-pc">
+            <span class="highlight">setouchi LIETO</span> はあります
+          </p>
+          <p>
+            広島県尾道市と愛媛県今治市を結ぶ、<br class="br-pc">
+            サイクリングロードとしても有名な<span class="highlight">『しまなみ海道』</span>の<br class="br-pc">
+            ちょうど中間地点に位置しています
+          </p>
+          <p>
+            瀬戸内は温暖で<br class="br-pc">
+            年間を通し降水量が少なく<br class="br-pc">
+            柑橘栽培に適した気候です
+          </p>
+          <p>
+            LIETO（リエット）は「楽しい」「陽気」などの意味があります<br class="br-pc">
+            瀬戸内海の穏やかな潮風と太陽をたくさん浴びた<br class="br-pc">
+            フレッシュな柑橘と<br class="br-pc">
+            楽しくなるような気持ちも込めてお届けします
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Citrus Products -->
+    <section class="products-section fade-in">
+      <div class="container">
+        <h2 class="section-title">柑橘</h2>
+        <p class="section-title-en">CITRUS</p>
+        
+        <div class="products-grid">
+          <div class="product-card" onclick="openModal('madonna')">
+            <div class="product-img-wrap">
+              <img src="images/madonna.jpg" alt="まどんな" class="product-img">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">まどんな</h3>
+              <p class="product-hint">クリックで詳細</p>
+            </div>
+          </div>
+          
+          <div class="product-card" onclick="openModal('harehime')">
+            <div class="product-img-wrap">
+              <img src="images/harehime.jpg" alt="はれひめ" class="product-img">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">はれひめ</h3>
+              <p class="product-hint">クリックで詳細</p>
+            </div>
+          </div>
+          
+          <div class="product-card" onclick="openModal('himekoharu')">
+            <div class="product-img-wrap">
+              <img src="images/himekoharu-kanpei.jpg" alt="媛小春・甘平" class="product-img">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">媛小春・甘平</h3>
+              <p class="product-hint">クリックで詳細</p>
+            </div>
+          </div>
+          
+          <div class="product-card" onclick="openModal('others')">
+            <div class="product-img-wrap">
+              <img src="images/others.jpg" alt="その他の品種" class="product-img">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">その他の品種</h3>
+              <p class="product-hint">クリックで詳細</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Processed Products -->
+    <section class="processed-section fade-in">
+      <div class="container">
+        <h2 class="section-title">加工品</h2>
+        <p class="section-title-en">PROCESSED PRODUCTS</p>
+        
+        <div class="processed-grid">
+          <div class="processed-card" onclick="openModal('juice')">
+            <div class="processed-img-wrap">
+              <img src="images/juice.jpg" alt="ジュース" class="product-img">
+            </div>
+            <div class="processed-info">
+              <h3 class="processed-name">ジュース</h3>
+            </div>
+          </div>
+          
+          <div class="processed-card" onclick="openModal('honey')">
+            <div class="processed-img-wrap">
+              <img src="images/honey.jpg" alt="はちみつ" class="product-img">
+            </div>
+            <div class="processed-info">
+              <h3 class="processed-name">はちみつ</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p class="footer-logo">setouchi LIETO</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/setouchi.LIETO/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/setouchi.lieto/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+      </div>
+      <p class="footer-copy">&copy; 2025 setouchi LIETO. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- Shop Page -->
+  <div class="page" id="page-shop">
+    <div class="page-shop">
+      <div class="shop-content">
+        <h2 class="section-title">ご購入</h2>
+        <p class="section-title-en">ONLINE SHOP</p>
+        
+        <p class="shop-description">
+          外部の販売サイト<br>
+          「産直通販ポケットマルシェ」にてご購入いただけます
+        </p>
+        
+        <a href="https://poke-m.com/producers/265442" target="_blank" rel="noopener" class="shop-btn">
+          ポケットマルシェで購入
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+      <p class="footer-logo">setouchi LIETO</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/setouchi.LIETO/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/setouchi.lieto/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+      </div>
+      <p class="footer-copy">&copy; 2025 setouchi LIETO. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- News Page -->
+  <div class="page" id="page-news">
+    <div class="page-news">
+      <div class="news-header">
+        <h2 class="section-title">お知らせ</h2>
+        <p class="section-title-en">NEWS & UPDATES</p>
+      </div>
+      
+      <div class="news-container">
+        <div class="facebook-embed">
+          <iframe 
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsetouchi.LIETO%2F&tabs=timeline&width=500&height=700&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+            width="500" 
+            height="700" 
+            style="border:none;overflow:hidden;width:100%;" 
+            scrolling="no" 
+            frameborder="0" 
+            allowfullscreen="true" 
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+          </iframe>
+        </div>
+        
+        <div class="facebook-link">
+          <a href="https://www.facebook.com/setouchi.LIETO/" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Facebookページを見る
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+      <p class="footer-logo">setouchi LIETO</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/setouchi.LIETO/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/setouchi.lieto/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+      </div>
+      <p class="footer-copy">&copy; 2025 setouchi LIETO. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- Modals -->
+  <div class="modal-overlay" id="modal-madonna" onclick="closeModal(event, 'madonna')">
+    <button class="modal-close" onclick="closeModalDirect('madonna')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-img-wrap">
+        <div class="modal-slider" id="slider-madonna">
+          <div class="modal-slide">
+            <img src="images/madonna-1.jpg" alt="まどんな" class="modal-slide-img">
+          </div>
+          <div class="modal-slide">
+            <img src="images/madonna-2.jpg" alt="まどんな" class="modal-slide-img">
+          </div>
+          <div class="modal-slide">
+            <img src="images/madonna-3.jpg" alt="まどんな" class="modal-slide-img">
+          </div>
+        </div>
+        <button class="modal-slider-nav prev" onclick="changeModalSlide('madonna', -1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="modal-slider-nav next" onclick="changeModalSlide('madonna', 1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+        <div class="modal-dots">
+          <div class="modal-dot active" onclick="goToModalSlide('madonna', 0)"></div>
+          <div class="modal-dot" onclick="goToModalSlide('madonna', 1)"></div>
+          <div class="modal-dot" onclick="goToModalSlide('madonna', 2)"></div>
+        </div>
+      </div>
+      <div class="modal-content">
+        <h3 class="modal-title">まどんな</h3>
+        <p class="modal-subtitle">愛媛果試第28号</p>
+        <p class="modal-text">
+          愛媛県生まれの県オリジナル品種。ゼリーのようなとろけるような食感と、甘い果汁と豊かな香りが特徴です。<br><br>
+          果実が果汁たっぷりでずっしりとしているので、１本に成る数を少なくして栽培するため、収量が限られる高級柑橘です。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-harehime" onclick="closeModal(event, 'harehime')">
+    <button class="modal-close" onclick="closeModalDirect('harehime')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-img-wrap">
+        <div class="modal-slider" id="slider-harehime">
+          <div class="modal-slide">
+            <img src="images/harehime-1.jpg" alt="はれひめ" class="modal-slide-img">
+          </div>
+          <div class="modal-slide">
+            <img src="images/harehime-2.jpg" alt="はれひめ" class="modal-slide-img">
+          </div>
+        </div>
+        <button class="modal-slider-nav prev" onclick="changeModalSlide('harehime', -1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="modal-slider-nav next" onclick="changeModalSlide('harehime', 1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+        <div class="modal-dots">
+          <div class="modal-dot active" onclick="goToModalSlide('harehime', 0)"></div>
+          <div class="modal-dot" onclick="goToModalSlide('harehime', 1)"></div>
+        </div>
+      </div>
+      <div class="modal-content">
+        <h3 class="modal-title">はれひめ</h3>
+        <p class="modal-text">
+          果肉が柔らかく、つぶつぶがプリッとした食感で、オレンジの爽やかな風味が特徴です。生産量がみかんに比べ少ない品種です。<br><br>
+          同じ木でもみかんの様な形とオレンジの様な形のものが混在して育ちます。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-himekoharu" onclick="closeModal(event, 'himekoharu')">
+    <button class="modal-close" onclick="closeModalDirect('himekoharu')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-img-wrap">
+        <div class="modal-slider" id="slider-himekoharu">
+          <div class="modal-slide">
+            <img src="images/himekoharu-kanpei-1.jpg" alt="媛小春・甘平" class="modal-slide-img">
+          </div>
+          <div class="modal-slide">
+            <img src="images/himekoharu-kanpei-2.jpg" alt="媛小春・甘平" class="modal-slide-img">
+          </div>
+        </div>
+        <button class="modal-slider-nav prev" onclick="changeModalSlide('himekoharu', -1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="modal-slider-nav next" onclick="changeModalSlide('himekoharu', 1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+        <div class="modal-dots">
+          <div class="modal-dot active" onclick="goToModalSlide('himekoharu', 0)"></div>
+          <div class="modal-dot" onclick="goToModalSlide('himekoharu', 1)"></div>
+        </div>
+      </div>
+      <div class="modal-content">
+        <h3 class="modal-title">媛小春・甘平</h3>
+        <p class="modal-text">
+          愛媛県限定品種です。<br><br>
+          媛小春は鮮やかな黄色の外見で酸味が強そうに見えますが、酸味は少なく、爽快な風味と甘みのバランスが良い柑橘です。<br><br>
+          甘平は外皮が薄く裂果しやすい特性で、降雨などの影響を受けやすく栽培管理が難しい品種です。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-others" onclick="closeModal(event, 'others')">
+    <button class="modal-close" onclick="closeModalDirect('others')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-img-wrap">
+        <div class="modal-slider" id="slider-others">
+          <div class="modal-slide">
+            <img src="images/others-1.jpg" alt="その他の品種" class="modal-slide-img">
+          </div>
+          <div class="modal-slide">
+            <img src="images/others-2.jpg" alt="その他の品種" class="modal-slide-img">
+          </div>
+        </div>
+        <button class="modal-slider-nav prev" onclick="changeModalSlide('others', -1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="modal-slider-nav next" onclick="changeModalSlide('others', 1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+        <div class="modal-dots">
+          <div class="modal-dot active" onclick="goToModalSlide('others', 0)"></div>
+          <div class="modal-dot" onclick="goToModalSlide('others', 1)"></div>
+        </div>
+      </div>
+      <div class="modal-content">
+        <h3 class="modal-title">その他の品種</h3>
+        <p class="modal-text">
+          レモン、温州みかんなど、古来から親しまれている柑橘も栽培しています。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-juice" onclick="closeModal(event, 'juice')">
+    <button class="modal-close" onclick="closeModalDirect('juice')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-img-wrap">
+        <div class="modal-slider" id="slider-juice">
+          <div class="modal-slide">
+            <img src="images/juice-1.jpg" alt="ジュース" class="modal-slide-img">
+          </div>
+          <div class="modal-slide">
+            <img src="images/juice-2.jpg" alt="ジュース" class="modal-slide-img">
+          </div>
+        </div>
+        <button class="modal-slider-nav prev" onclick="changeModalSlide('juice', -1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="modal-slider-nav next" onclick="changeModalSlide('juice', 1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+        <div class="modal-dots">
+          <div class="modal-dot active" onclick="goToModalSlide('juice', 0)"></div>
+          <div class="modal-dot" onclick="goToModalSlide('juice', 1)"></div>
+        </div>
+      </div>
+      <div class="modal-content">
+        <h3 class="modal-title">ジュース</h3>
+        <p class="modal-text">
+          当農園で育てた柑橘の美味しさをそのまま瞬時に果皮と分離する、インライン搾汁製法で、柑橘本来の味を雑味なくぎゅっと絞った果汁100%ストレートジュースです。<br><br>
+          酸味料などの添加物は一切使用しておりませんので、開封後は冷蔵保存し、お早めにお召し上がりください。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-honey" onclick="closeModal(event, 'honey')">
+    <button class="modal-close" onclick="closeModalDirect('honey')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-img-wrap">
+        <div class="modal-slider" id="slider-honey">
+          <div class="modal-slide">
+            <img src="images/honey-1.jpg" alt="はちみつ" class="modal-slide-img">
+          </div>
+          <div class="modal-slide">
+            <img src="images/honey-2.jpg" alt="はちみつ" class="modal-slide-img">
+          </div>
+        </div>
+        <button class="modal-slider-nav prev" onclick="changeModalSlide('honey', -1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="modal-slider-nav next" onclick="changeModalSlide('honey', 1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+        <div class="modal-dots">
+          <div class="modal-dot active" onclick="goToModalSlide('honey', 0)"></div>
+          <div class="modal-dot" onclick="goToModalSlide('honey', 1)"></div>
+        </div>
+      </div>
+      <div class="modal-content">
+        <h3 class="modal-title">はちみつ</h3>
+        <p class="modal-text">
+          地元の養蜂家に学び、2019年より養蜂を始めました。<br><br>
+          柑橘の花が５月に咲き始め、島のあちらこちらで甘い香りが漂います。当農場にもみかん・伊予柑・八朔があり、主にその花々から集めたはちみつです。<br><br>
+          島で採れた非加熱のはちみつの美味しさを、ぜひお楽しみください。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Slider
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    let slideInterval;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        dots[i].classList.remove('active');
+      });
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+    }
+
+    function changeSlide(direction) {
+      currentSlide += direction;
+      if (currentSlide >= slides.length) currentSlide = 0;
+      if (currentSlide < 0) currentSlide = slides.length - 1;
+      showSlide(currentSlide);
+      resetInterval();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      showSlide(currentSlide);
+      resetInterval();
+    }
+
+    function resetInterval() {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(() => changeSlide(1), 5000);
+    }
+
+    slideInterval = setInterval(() => changeSlide(1), 5000);
+
+    // Page switching
+    function switchPage(pageName) {
+      document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+      });
+      document.getElementById('page-' + pageName).classList.add('active');
+      
+      document.querySelectorAll('.nav-tab').forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.dataset.page === pageName) {
+          tab.classList.add('active');
+        }
+      });
+      
+      document.getElementById('navRight').classList.remove('open');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      // Re-trigger fade animations
+      setTimeout(() => {
+        document.querySelectorAll('#page-' + pageName + ' .fade-in').forEach(el => {
+          observer.observe(el);
+        });
+      }, 100);
+    }
+
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      document.getElementById('navRight').classList.toggle('open');
+    }
+
+    // Scroll effect for nav
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('.nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Modal functions
+    function closeModal(event, id) {
+      if (event.target === event.currentTarget) {
+        document.getElementById('modal-' + id).classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function closeModalDirect(id) {
+      document.getElementById('modal-' + id).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+          modal.classList.remove('active');
+        });
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Modal slider functionality
+    const modalSlides = {};
+
+    function initModalSlider(id) {
+      if (!modalSlides[id]) {
+        modalSlides[id] = 0;
+      }
+    }
+
+    function changeModalSlide(id, direction) {
+      initModalSlider(id);
+      const slider = document.getElementById('slider-' + id);
+      const slides = slider.querySelectorAll('.modal-slide');
+      const dots = slider.parentElement.querySelectorAll('.modal-dot');
+      
+      modalSlides[id] += direction;
+      if (modalSlides[id] >= slides.length) modalSlides[id] = 0;
+      if (modalSlides[id] < 0) modalSlides[id] = slides.length - 1;
+      
+      slider.style.transform = `translateX(-${modalSlides[id] * 100}%)`;
+      
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === modalSlides[id]);
+      });
+    }
+
+    function goToModalSlide(id, index) {
+      initModalSlider(id);
+      const slider = document.getElementById('slider-' + id);
+      const dots = slider.parentElement.querySelectorAll('.modal-dot');
+      
+      modalSlides[id] = index;
+      slider.style.transform = `translateX(-${index * 100}%)`;
+      
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    // Reset modal slider when opening
+    function openModal(id) {
+      // Reset slider to first slide
+      modalSlides[id] = 0;
+      const slider = document.getElementById('slider-' + id);
+      if (slider) {
+        slider.style.transform = 'translateX(0)';
+        const dots = slider.parentElement.querySelectorAll('.modal-dot');
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === 0);
+        });
+      }
+      
+      document.getElementById('modal-' + id).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
