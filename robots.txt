@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://setouchi-lieto.com/sitemap.xml
